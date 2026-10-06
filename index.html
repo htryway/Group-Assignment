@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Next Level Gaming</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html">
+        <img src="img/logo.jpg" alt="Next Level Gaming &amp; Esports Arena logo">
+      </a>
+      <nav>
+        <a href="index.html" class="on">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="tournaments.html">Tournaments</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="about.html">About Us</a>
+        <a href="overview.html">Overview</a>
+        <a href="fees.html">Calculate Fees</a>
+        <a href="tournaments.html#leaderboard">Leaderboard</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <a class="btn" href="packages.html">Book Now</a>
+    </div>
+  </header>
+
+  <section class="home">
+    <div class="w">
+      <div>
+        <h1>Welcome to the Next Level</h1>
+        <p>Johannesburg's premier gaming &amp; esports arena. Book elite gaming rigs, join tournaments and host unforgettable group events. Sign in or create an account to get started.</p>
+        <a class="btn" href="packages.html">View Packages</a>
+        <a class="btn o" href="tournaments.html">Join a Tournament</a>
+      </div>
+
+      <div class="auth">
+        <div class="tabs" id="at">
+          <button class="on" data-f="si">Sign In</button>
+          <button data-f="su">Sign Up</button>
+        </div>
+
+        <form id="si" class="on">
+          <label for="e1">Email</label>
+          <input id="e1" type="email" required placeholder="you@example.com">
+          <label for="p1">Password</label>
+          <input id="p1" type="password" required minlength="6">
+          <button class="btn" type="submit">Sign In</button>
+          <p class="msg"></p>
+        </form>
+
+        <form id="su">
+          <label for="n2">Full name</label>
+          <input id="n2" required>
+          <label for="e2">Email</label>
+          <input id="e2" type="email" required placeholder="you@example.com">
+          <label for="p2">Password</label>
+          <input id="p2" type="password" required minlength="6">
+          <label for="c2">Confirm password</label>
+          <input id="c2" type="password" required minlength="6">
+          <button class="btn" type="submit">Create Account</button>
+          <p class="msg"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="w">
+      <div class="sh">
+        <h2>Explore the Arena</h2>
+        <p>Everything you need for your next gaming session</p>
+      </div>
+      <div class="cards">
+        <a class="card lk" href="packages.html">
+          <h3>Arena Packages</h3>
+          <p style="min-height:0;margin:0">Passes from R1 500 for solo players to birthday parties.</p>
+        </a>
+        <a class="card lk" href="tournaments.html">
+          <h3>Tournaments</h3>
+          <p style="min-height:0;margin:0">Weekly ladders, monthly cups and school championships.</p>
+        </a>
+        <a class="card lk" href="corporate.html">
+          <h3>Group &amp; Corporate</h3>
+          <p style="min-height:0;margin:0">Tailored packages for schools, teams and companies.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="w">
+      <div>
+        <h4 style="font-size:20px">Next Level Gaming</h4>
+        <p>Johannesburg, South Africa</p>
+        <small>Est. 2023 by Jason Naidoo. Premier esports &amp; gaming experiences.</small>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="index.html">Home</a> • <a href="about.html">About Us</a> • <a href="overview.html">Overview</a></p>
+        <p><a href="fees.html">Calculate Fees</a> • <a href="contact.html">Contact Us</a></p>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <p>info@nextlevelgaming.co.za</p>
+        <p>Instagram • Facebook • TikTok</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
