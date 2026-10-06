@@ -1,98 +1,45 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, { useEffect, useRef } from "react";
+import { View, Text, StyleSheet, Animated, Easing } from "react-native";
+import { router } from "expo-router";
+import { LogoLockup } from "../components/Logo";
+import { colors } from "../theme/colors";
 
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+// app/index.tsx is the "/" route — it's what loads first, same job the
+// initialRouteName="Splash" stack screen used to do.
+export default function SplashScreen() {
+  const progress = useRef(new Animated.Value(0)).current;
 
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
+  useEffect(() => {
+    Animated.timing(progress, {
+      toValue: 1,
+      duration: 1400,
+      easing: Easing.out(Easing.cubic),
+      useNativeDriver: false,
+    }).start(() => router.replace("/onboarding"));
+  }, []);
+
+  const width = progress.interpolate({ inputRange: [0, 1], outputRange: ["0%", "100%"] });
+
   return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
-  );
-}
-
-export default function HomeScreen() {
-  return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
-
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
-
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
-
-        {Platform.OS === 'web' && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
+    <View style={styles.wrap}>
+      <View style={styles.center}>
+        <LogoLockup size={110} />
+      </View>
+      <View style={styles.bottom}>
+        <View style={styles.track}>
+          <Animated.View style={[styles.fill, { width }]} />
+        </View>
+        <Text style={styles.loadingText}>Loading arena resources…</Text>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
-  safeArea: {
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
-  },
-  heroSection: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
-  },
-  title: {
-    textAlign: 'center',
-  },
-  code: {
-    textTransform: 'uppercase',
-  },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
-  },
+  wrap: { flex: 1, backgroundColor: colors.charcoal, justifyContent: "space-between" },
+  center: { flex: 1, alignItems: "center", justifyContent: "center" },
+  bottom: { paddingHorizontal: 40, paddingBottom: 60 },
+  track: { height: 4, backgroundColor: colors.border, borderRadius: 2, overflow: "hidden" },
+  fill: { height: 4, backgroundColor: colors.cyan },
+  loadingText: { color: colors.grey, fontSize: 12, textAlign: "center", marginTop: 14 },
 });
