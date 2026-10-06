@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Package — Next Level Gaming &amp; Esports Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <section class="section-tight">
+    <div class="container" id="package-hero">
+      <!-- filled by script -->
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <h2>You May Also Like</h2>
+      <div class="card-grid mt-lg" id="related-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const item = NL_DATA.allItems.find((i) => i.id === id) || NL_DATA.packages[0];
+
+    document.title = `${item.name} — Next Level Gaming & Esports Arena`;
+
+    document.getElementById("package-hero").innerHTML = `
+      <span class="eyebrow">${item.badge} Review</span>
+      <h1>${item.name}</h1>
+      <p style="max-width:640px">${item.summary}</p>
+      <div class="badge-outline mt-lg">R${item.price.toLocaleString("en-ZA")}</div>
+      <h2 class="mt-lg">What's Included</h2>
+      <ul class="check-list">
+        ${item.inclusions.map((i) => `<li>${i}</li>`).join("")}
+      </ul>
+      <a href="fees.html?id=${item.id}" class="btn btn-primary">Book This ${item.badge.includes("Package") ? "Package" : "Experience"}</a>
+    `;
+
+    const related = NL_DATA.allItems.filter((i) => i.id !== item.id).slice(0, 3);
+    document.getElementById("related-grid").innerHTML = related
+      .map(
+        (r) => `
+      <article class="card">
+        <span class="card-badge">${r.badge}</span>
+        <h3>${r.name}</h3>
+        <p class="price">R${r.price.toLocaleString("en-ZA")}</p>
+        <p>${r.summary}</p>
+        <a class="card-link" href="package.html?id=${r.id}">Learn More &rarr;</a>
+      </article>`
+      )
+      .join("");
+  });
+</script>
+</body>
+</html>

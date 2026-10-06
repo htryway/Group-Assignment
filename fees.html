@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculate Fees — Next Level Gaming &amp; Esports Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Interactive Cost Planner</span>
+      <h1>Calculate Your Fees</h1>
+      <p style="max-width:560px">Add packages and experiences below. Your discount tier, VAT and grand
+        total update automatically as you go.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <form id="fees-form" class="fees-layout" novalidate>
+
+        <div>
+          <h2>1. Customer Details</h2>
+          <div class="field">
+            <label for="fees-name">Full Name</label>
+            <input type="text" id="fees-name" placeholder="e.g. Sipho Nkosi" />
+            <p class="field-error"></p>
+          </div>
+          <div class="two-col">
+            <div class="field">
+              <label for="fees-email">Email Address</label>
+              <input type="email" id="fees-email" placeholder="e.g. sipho@example.com" />
+              <p class="field-error"></p>
+            </div>
+            <div class="field">
+              <label for="fees-phone">Phone Number</label>
+              <input type="tel" id="fees-phone" placeholder="e.g. +27 82 123 4567" />
+              <p class="field-error"></p>
+            </div>
+          </div>
+
+          <h2 class="mt-lg">2. Select Packages &amp; Experiences</h2>
+          <div id="fees-item-list"></div>
+        </div>
+
+        <aside class="summary-card">
+          <span class="discount-chip" id="fees-discount-chip">No items selected</span>
+          <h3>Live Summary</h3>
+          <div id="fees-summary-lines"></div>
+
+          <button type="submit" class="btn btn-primary btn-block mt-lg" id="fees-proceed-btn" disabled>
+            Calculate &amp; Generate Invoice
+          </button>
+
+          <div class="tier-ref" id="fees-tier-ref">
+            <p style="margin-bottom:6px;color:var(--off-white);font-weight:600;">Discount tiers</p>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;">
+              <li data-min="1" data-max="1">1 booking — 0%</li>
+              <li data-min="2" data-max="2">2 bookings — 5%</li>
+              <li data-min="3" data-max="3">3 bookings — 10%</li>
+              <li data-min="4" data-max="inf">4+ bookings — 15%</li>
+            </ul>
+          </div>
+        </aside>
+      </form>
+
+      <div class="invoice-box" id="fees-invoice"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/fees.js"></script>
+</body>
+</html>

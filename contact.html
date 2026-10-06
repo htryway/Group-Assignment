@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — Next Level Gaming &amp; Esports Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Community Access &amp; Support</span>
+      <h1>Get In Touch</h1>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container two-col">
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="contact-name">Full Name</label>
+          <input type="text" id="contact-name" placeholder="e.g. Liam Naidoo" />
+          <p class="field-error"></p>
+        </div>
+        <div class="field">
+          <label for="contact-email">Email Address</label>
+          <input type="email" id="contact-email" placeholder="e.g. liam@nextlevel.co.za" />
+          <p class="field-error"></p>
+        </div>
+        <div class="field">
+          <label for="contact-phone">Phone Number</label>
+          <input type="tel" id="contact-phone" placeholder="e.g. +27 (0) 79 123 4567" />
+          <p class="field-error"></p>
+        </div>
+        <div class="field">
+          <label for="contact-message">Your Message</label>
+          <textarea id="contact-message" placeholder="Let us know what you need help with…"></textarea>
+          <p class="field-error"></p>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        <p id="contact-success" style="display:none;color:var(--cyan);margin-top:16px;">
+          Thanks — your message has been sent. We'll reply within one business day.
+        </p>
+      </form>
+
+      <div>
+        <div class="card" style="margin-bottom:20px;">
+          <h3>Contact Information</h3>
+          <p class="footer-icon-line"><img src="assets/icons/location.svg" width="16" height="16" alt="" /><span id="contact-address"></span></p>
+          <a class="footer-icon-line" id="contact-phone-link" href="#"><img src="assets/icons/phone.svg" width="16" height="16" alt="" /><span></span></a>
+          <a class="footer-icon-line" id="contact-email-link" href="#"><img src="assets/icons/email.svg" width="16" height="16" alt="" /><span></span></a>
+        </div>
+        <div class="map-frame">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=28.0467%2C-26.1176%2C28.0667%2C-26.0976&layer=mapnik&marker=-26.1076%2C28.0567"
+            title="Map showing Next Level Gaming location in Sandton, Johannesburg" loading="lazy"></iframe>
+        </div>
+        <div class="card mt-lg">
+          <h3>Operating Hours</h3>
+          <div id="contact-hours"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script src="js/contact.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const c = NL_DATA.contact;
+    document.getElementById("contact-address").textContent = c.address;
+    const phoneLink = document.getElementById("contact-phone-link");
+    phoneLink.querySelector("span").textContent = c.phone;
+    phoneLink.href = "tel:" + c.phoneHref;
+    const emailLink = document.getElementById("contact-email-link");
+    emailLink.querySelector("span").textContent = c.email;
+    emailLink.href = "mailto:" + c.email;
+    document.getElementById("contact-hours").innerHTML = c.hours
+      .map((h) => `<p style="display:flex;justify-content:space-between;"><span>${h.day}</span><span>${h.time}</span></p>`)
+      .join("");
+  });
+</script>
+</body>
+</html>

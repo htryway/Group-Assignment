@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us — Next Level Gaming &amp; Esports Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <section class="section-tight text-center">
+    <div class="container" style="max-width:720px">
+      <h1>About Next Level</h1>
+      <p class="lead">Established in Sandton, Johannesburg, we are South Africa's premier
+        high-fidelity gaming sanctuary designed to cultivate next-generation gaming and esports mastery.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">Established 2024</span>
+        <h2>Our Founding Story</h2>
+        <p>In early 2024, a team of passionate esports players and high-tech operators realised
+          Sandton was missing a critical piece of infrastructure: a world-class venue dedicated to
+          zero-compromise, competitive-grade gaming. We built Next Level to bridge the gap between
+          casual home setups and pro-standard LAN environments.</p>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>To empower South African gamers with uncompromising high-performance rigs, professional
+            coaching frameworks, and a community space built on competitive integrity and comfort.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="card-grid">
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>To position Johannesburg as the beating heart of competitive esports on the continent,
+            producing world-class players backed by top-tier analytical gaming infrastructure.</p>
+        </div>
+        <div class="card">
+          <h3>What Sets Us Apart</h3>
+          <p>10Gbps dedicated fibre, RTX 4090 rigs across the floor, five-star in-house catering, and
+            fully soundproofed private booths for corporate and VIP bookings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Visit Us</span>
+      <h2>Located in Sandton, Johannesburg</h2>
+      <p id="about-address"></p>
+      <div class="map-frame mt-lg">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=28.0467%2C-26.1176%2C28.0667%2C-26.0976&layer=mapnik&marker=-26.1076%2C28.0567"
+          title="Map showing Next Level Gaming location in Sandton, Johannesburg" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("about-address").textContent = NL_DATA.contact.address + " · High-security parking provided.";
+  });
+</script>
+</body>
+</html>

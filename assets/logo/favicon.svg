@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B8D9"/>
+      <stop offset="50%" stop-color="#6B2FBF"/>
+      <stop offset="100%" stop-color="#D6249F"/>
+    </linearGradient>
+    <linearGradient id="chevGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D6249F"/>
+      <stop offset="25%" stop-color="#6B2FBF"/>
+      <stop offset="50%" stop-color="#00B8D9"/>
+      <stop offset="75%" stop-color="#6B2FBF"/>
+      <stop offset="100%" stop-color="#D6249F"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="#111018"/>
+  <polygon points="100,20 168,60 168,140 100,180 32,140 32,60"
+    fill="none" stroke="url(#hexGrad)" stroke-width="9" stroke-linejoin="round"/>
+  <polyline points="62,118 100,82 138,118" fill="none"
+    stroke="url(#chevGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="77,131 100,110 123,131" fill="none"
+    stroke="url(#chevGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

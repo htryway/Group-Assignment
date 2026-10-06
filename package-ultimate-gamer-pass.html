@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ultimate Gamer Pass — Next Level Gaming &amp; Esports Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Package Review</span>
+      <h1>Ultimate Gamer Pass</h1>
+      <p style="max-width:640px">Settle in for a zero-compromise day of gaming immersion on the best
+        hardware in the Southern Hemisphere. Perfect for serious competitors wanting to test their
+        limits, or casual squads locking in a heavy session.</p>
+
+      <div class="badge-outline mt-lg">R1 500 · Per Person, Per Day</div>
+
+      <h2 class="mt-lg">What's Included</h2>
+      <ul class="check-list">
+        <li>Unlimited PC &amp; console gaming for a full day</li>
+        <li>High-speed internet access (10Gbps dedicated connection)</li>
+        <li>Snack &amp; drink voucher redeemable at the arena café</li>
+        <li>Tournament entry pass for daily community brackets</li>
+        <li>Access to all open gaming zones (simulators, arcade)</li>
+      </ul>
+
+      <a href="fees.html?id=ultimate-gamer-pass" class="btn btn-primary">Book This Package</a>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <h2>You May Also Like</h2>
+      <div class="card-grid mt-lg" id="related-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const related = NL_DATA.packages.filter((p) => p.id !== "ultimate-gamer-pass");
+    document.getElementById("related-grid").innerHTML = related
+      .map(
+        (item) => `
+      <article class="card">
+        <span class="card-badge">${item.badge}</span>
+        <h3>${item.name}</h3>
+        <p class="price">R${item.price.toLocaleString("en-ZA")}</p>
+        <p>${item.summary}</p>
+        <a class="card-link" href="package.html?id=${item.id}">Learn More &rarr;</a>
+      </article>`
+      )
+      .join("");
+  });
+</script>
+</body>
+</html>

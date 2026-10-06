@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Individual Experiences — Next Level Gaming &amp; Esports Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main>
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Solo &amp; Duo Challenges</span>
+      <h1>Individual Experiences</h1>
+      <p style="max-width:520px">Three ways to play without committing to a full package.
+        R750 each, bookable on their own or added to any package.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="card-grid" id="experiences-detail-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/data.js"></script>
+<script src="js/components.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const mount = document.getElementById("experiences-detail-grid");
+    mount.innerHTML = NL_DATA.experiences
+      .map(
+        (item) => `
+      <article class="card">
+        <span class="card-badge">${item.badge}</span>
+        <h3>${item.name}</h3>
+        <p class="price">R${item.price.toLocaleString("en-ZA")}</p>
+        <ul class="check-list">
+          ${item.inclusions.map((i) => `<li>${i}</li>`).join("")}
+        </ul>
+        <a class="btn btn-primary btn-block" href="fees.html?id=${item.id}">Book Now</a>
+      </article>`
+      )
+      .join("");
+  });
+</script>
+</body>
+</html>

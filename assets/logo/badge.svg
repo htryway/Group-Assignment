@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B8D9"/>
+      <stop offset="50%" stop-color="#6B2FBF"/>
+      <stop offset="100%" stop-color="#D6249F"/>
+    </linearGradient>
+    <linearGradient id="chevGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D6249F"/>
+      <stop offset="25%" stop-color="#6B2FBF"/>
+      <stop offset="50%" stop-color="#00B8D9"/>
+      <stop offset="75%" stop-color="#6B2FBF"/>
+      <stop offset="100%" stop-color="#D6249F"/>
+    </linearGradient>
+  </defs>
+  <polygon points="100,12 176,56 176,144 100,188 24,144 24,56"
+    fill="none" stroke="url(#hexGrad)" stroke-width="8" stroke-linejoin="round"/>
+  <polyline points="58,122 100,82 142,122" fill="none"
+    stroke="url(#chevGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="74,136 100,112 126,136" fill="none"
+    stroke="url(#chevGrad)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="76" cy="157" r="5" fill="#00B8D9"/>
+  <circle cx="90" cy="157" r="3.5" fill="#6B2FBF"/>
+  <circle cx="110" cy="157" r="3.5" fill="#6B2FBF"/>
+  <circle cx="124" cy="157" r="5" fill="#D6249F"/>
+</svg>
