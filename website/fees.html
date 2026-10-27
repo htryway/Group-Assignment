@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculate Fees | Next Level Gaming</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="w">
+      <a class="logo" href="index.html">
+        <img src="img/logo.jpg" alt="Next Level Gaming &amp; Esports Arena logo">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="packages.html">Packages</a>
+        <a href="tournaments.html">Tournaments</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="corporate.html">Corporate</a>
+        <a href="about.html">About Us</a>
+        <a href="overview.html">Overview</a>
+        <a href="fees.html" class="on">Calculate Fees</a>
+        <a href="tournaments.html#leaderboard">Leaderboard</a>
+        <a href="faqs.html">FAQs</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <a class="btn" href="packages.html">Book Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="w">
+      <h1>Calculate Fees</h1>
+      <p>Build your booking below and see your total update as you go — squad discounts included.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="w">
+      <div class="calc" id="calc">
+        <div class="calc-row" data-price="1500">
+          <div><h4>Ultimate Gamer Pass</h4><small>R1 500 / full day</small></div>
+          <div class="qty"><button class="sub">&minus;</button><span>0</span><button class="add">+</button></div>
+        </div>
+        <div class="calc-row" data-price="2500">
+          <div><h4>VIP Gaming Experience</h4><small>R2 500 / session</small></div>
+          <div class="qty"><button class="sub">&minus;</button><span>0</span><button class="add">+</button></div>
+        </div>
+        <div class="calc-row" data-price="1800">
+          <div><h4>Esports Training</h4><small>R1 800 / session</small></div>
+          <div class="qty"><button class="sub">&minus;</button><span>0</span><button class="add">+</button></div>
+        </div>
+        <div class="calc-row" data-price="4500">
+          <div><h4>Birthday Party Package</h4><small>R4 500 / party</small></div>
+          <div class="qty"><button class="sub">&minus;</button><span>0</span><button class="add">+</button></div>
+        </div>
+
+        <div class="sum" style="margin-top:24px">
+          <div><span>Subtotal</span><span id="calcSubtotal">R0.00</span></div>
+          <div><span>Squad Discount</span><span id="calcDiscount" style="color:var(--c)">-R0.00</span></div>
+          <div><span>VAT (15%)</span><span id="calcVat">R0.00</span></div>
+          <div class="tot"><b class="f">Total</b><b class="f" style="color:var(--m)" id="calcTotal">R0.00</b></div>
+        </div>
+
+        <p class="hint" id="calcNote">Select at least one package to see your total.</p>
+        <p style="text-align:center;margin-top:24px">
+          <a class="btn" href="packages.html">Proceed to Booking</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="w">
+      <div class="sh">
+        <h2>Squad Discounts</h2>
+        <p>The more you book together, the more you save</p>
+      </div>
+      <table>
+        <tr>
+          <th>Total Bookings</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4+</th>
+        </tr>
+        <tr>
+          <td>Discount</td>
+          <td>0%</td>
+          <td>5%</td>
+          <td>10%</td>
+          <td>15%</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="w">
+      <div>
+        <h4 style="font-size:20px">Next Level Gaming</h4>
+        <p>Johannesburg, South Africa</p>
+        <small>Est. 2023 by Jason Naidoo. Premier esports &amp; gaming experiences.</small>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p><a href="index.html">Home</a> • <a href="about.html">About Us</a> • <a href="overview.html">Overview</a></p>
+        <p><a href="fees.html">Calculate Fees</a> • <a href="contact.html">Contact Us</a></p>
+      </div>
+      <div>
+        <h4>Get In Touch</h4>
+        <p>info@nextlevelgaming.co.za</p>
+        <p>Instagram • Facebook • TikTok</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
